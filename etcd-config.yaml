@@ -1,0 +1,9 @@
+#cloud-config
+# vim: syntax=yaml
+
+write_files:
+-   content: |
+        [Service]
+        Environment=ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379
+        Environment=ETCD_ADVERTISE_CLIENT_URLS=http://${PUBLIC_IP}:2379
+    path: /etc/systemd/system/etcd2.service.d/40-listen-address.conf
