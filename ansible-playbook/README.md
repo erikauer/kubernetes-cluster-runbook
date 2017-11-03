@@ -25,3 +25,8 @@ look like:
      endpoint = https://api.exoscale.ch/compute
      key = EX11142dd65bd311fe6aa6dd0f2
      secret = n1KgzB928TWPVVc1PwEvTw89lKl1dpwgc1yvshGwbB4x
+
+## Resources
+
+To setup coreOS for ansible, the playbook etcd-ansible-setup installs python. Therfore
+we use following github snippet from judexzhu: https://raw.githubusercontent.com/judexzhu/Install-Python-on-CoreOs/master/install-python.sh
