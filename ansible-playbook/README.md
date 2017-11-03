@@ -29,4 +29,6 @@ look like:
 ## Resources
 
 To setup coreOS for ansible, the playbook etcd-ansible-setup installs python. Therfore
-we use following github snippet from judexzhu: https://raw.githubusercontent.com/judexzhu/Install-Python-on-CoreOs/master/install-python.sh
+we use following github snippet from judexzhu:
+
+    https://raw.githubusercontent.com/judexzhu/Install-Python-on-CoreOs/master/install-python.sh
