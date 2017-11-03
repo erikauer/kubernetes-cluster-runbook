@@ -2,3 +2,5 @@ variables.tf
 .terraform
 *.backup
 *.tfstate
+inventory
+*.retry

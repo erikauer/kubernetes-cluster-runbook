@@ -1,0 +1,4 @@
+---
+- hosts: [ectd_nodes]
+  roles:
+    - etcd-provisioning

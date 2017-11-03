@@ -1,0 +1,2 @@
+- name: Setup for Ansible - Install Python on CoreOS
+  raw: wget -qO- https://raw.githubusercontent.com/judexzhu/Install-Python-on-CoreOs/master/install-python.sh | sudo bash

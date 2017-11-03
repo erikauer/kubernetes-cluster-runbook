@@ -1,0 +1,5 @@
+---
+- hosts: [ectd_nodes]
+  gather_facts: no
+  roles:
+    - coreos-raw-python-install
