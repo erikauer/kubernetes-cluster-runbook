@@ -1,2 +1,4 @@
-- debug:
-    msg: "Start Config deployment"
+- name: Create directory that contains the service configuration
+  file: path=/etc/systemd/system/etcd2.service.d state=directory mode=0755
+- name: Deploy service configuration
+  template: src=40-listen-address.conf dest=/etc/systemd/system/etcd2.service.d/40-listen-address.conf

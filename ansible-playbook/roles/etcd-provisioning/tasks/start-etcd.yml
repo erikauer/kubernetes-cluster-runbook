@@ -1,0 +1,5 @@
+- name: Start and enable etcd
+  systemd:
+    name: etcd2
+    enabled: yes
+    state: started

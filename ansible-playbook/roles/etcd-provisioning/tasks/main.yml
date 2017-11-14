@@ -1,2 +1,3 @@
 ---
-  - include: deploy-config.yml
+  - include_tasks: deploy-config.yml
+  - include_tasks: start-etcd.yml

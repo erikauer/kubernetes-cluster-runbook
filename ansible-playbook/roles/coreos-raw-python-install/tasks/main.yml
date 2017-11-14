@@ -1,2 +1,2 @@
 ---
-  - include: install-python.yml
+  - include_tasks: install-python.yml
