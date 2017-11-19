@@ -1,0 +1,7 @@
+---
+- hosts: [kubernetes_nodes]
+  become: true
+  become_user: root
+  become_method: sudo
+  roles:
+    - kubernetes-worker-provisioning

@@ -1,0 +1,5 @@
+- name: Start and enable kubelet on master node
+  systemd:
+    name: kubelet
+    state: started
+    enabled: True
