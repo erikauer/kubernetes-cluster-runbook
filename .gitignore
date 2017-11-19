@@ -4,3 +4,4 @@ variables.tf
 *.tfstate
 inventory
 *.retry
+certs
