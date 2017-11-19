@@ -2,3 +2,10 @@
   - include_tasks: copy-certificates.yml
   - include_tasks: flannel-configuration.yml
   - include_tasks: install-kubelet.yml
+  - include_tasks: setup-apiserver-pod.yml
+  - include_tasks: setup-kube-proxy-pod.yml
+  - include_tasks: setup-kube-podmaster-pod.yml
+  - include_tasks: setup-kube-controller-manager-pod.yml
+  - include_tasks: setup-kube-scheduler-pod.yml
+  - include_tasks: systemd-reread.yml
+  - include_tasks: configure-flannel-network.yml

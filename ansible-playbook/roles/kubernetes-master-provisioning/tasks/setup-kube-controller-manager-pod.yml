@@ -1,0 +1,2 @@
+- name: Deploy controll manager pod manifest
+  template: src=kube-controller-manager.yaml dest=/etc/kubernetes/manifests/kube-controller-manager.yaml
