@@ -1,0 +1,4 @@
+---
+  - include_tasks: copy-certificates.yml
+  - include_tasks: flannel-configuration.yml
+  - include_tasks: install-kubelet.yml

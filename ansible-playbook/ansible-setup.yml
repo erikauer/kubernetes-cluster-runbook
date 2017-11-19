@@ -1,5 +1,5 @@
 ---
-- hosts: [ectd_nodes, kubernetes_master, kubernetes_nodes]
+- hosts: [etcd_nodes, kubernetes_master, kubernetes_nodes]
   gather_facts: no
   roles:
     - coreos-raw-python-install

@@ -1,7 +1,7 @@
 ---
-- hosts: [etcd_nodes]
+- hosts: [kubernetes_master]
   become: true
   become_user: root
   become_method: sudo
   roles:
-    - etcd-provisioning
+    - kubernetes-master-provisioning

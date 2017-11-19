@@ -1,0 +1,17 @@
+- name: Create directory that contains the certificates
+  file: path=/etc/kubernetes/ssl/ state=directory mode=0755
+- name: Copy local ca certificate to kubernetes kubernetes_master
+  copy:
+    src: /Users/erik/Programming/terraform/kubernetes-exoscale/certs/ca.pem
+    dest: /etc/kubernetes/ssl/ca.pem
+    mode: 0644
+- name: Copy local apiserver certificate to kubernetes kubernetes_master
+  copy:
+    src: /Users/erik/Programming/terraform/kubernetes-exoscale/certs/apiserver.pem
+    dest: /etc/kubernetes/ssl/apiserver.pem
+    mode: 0644
+- name: Copy local apiserver key certificates to kubernetes kubernetes_master
+  copy:
+    src: /Users/erik/Programming/terraform/kubernetes-exoscale/certs/apiserver-key.pem
+    dest: /etc/kubernetes/ssl/apiserver-key.pem
+    mode: 0644
