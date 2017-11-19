@@ -1,0 +1,2 @@
+ansible-playbook ./ansible-playbook/ansible-setup.yml -i ./inventory
+ansible-playbook ./ansible-playbook/etcd-provisioning.yml -i ./inventory

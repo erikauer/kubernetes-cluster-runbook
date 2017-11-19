@@ -12,7 +12,7 @@ After the infrastructure was created by terraform, the virtual machines are prov
 ## Run this example
 After successful setup your playbook, you just need to run following command to start the deployment
 
-     ansible-playbook ./etcd-ansible-setup.yml -i ../inventory
+     ansible-playbook ./ansible-setup.yml -i ../inventory
      ansible-playbook ./etcd-provisioning.yml -i ../inventory
 
 ## Configure Cloudstack API
