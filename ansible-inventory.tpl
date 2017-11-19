@@ -1,6 +1,6 @@
 [default]
 
-[ectd_nodes]
+[etcd_nodes]
 ${etcd_node01_ip}
 
 [kubernetes_master]
