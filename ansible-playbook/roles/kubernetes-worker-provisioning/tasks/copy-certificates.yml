@@ -1,0 +1,23 @@
+- name: Create directory that contains the certificates
+  file: path=/etc/kubernetes/ssl/ state=directory mode=0755
+- name: Copy local ca certificate to kubernetes worker
+  copy:
+    src: /Users/erik/Programming/terraform/kubernetes-exoscale/certs/ca.pem
+    dest: /etc/kubernetes/ssl/ca.pem
+    mode: 0600
+    owner: root
+    group: root
+- name: Copy local worker certificate to kubernetes worker
+  copy:
+    src: /Users/erik/Programming/terraform/kubernetes-exoscale/certs/worker.pem
+    dest: /etc/kubernetes/ssl/worker.pem
+    mode: 0600
+    owner: root
+    group: root
+- name: Copy local worker key certificates to kubernetes worker
+  copy:
+    src: /Users/erik/Programming/terraform/kubernetes-exoscale/certs/worker-key.pem
+    dest: /etc/kubernetes/ssl/worker-key.pem
+    mode: 0600
+    owner: root
+    group: root

@@ -4,14 +4,20 @@
   copy:
     src: /Users/erik/Programming/terraform/kubernetes-exoscale/certs/ca.pem
     dest: /etc/kubernetes/ssl/ca.pem
-    mode: 0644
+    mode: 0600
+    owner: root
+    group: root
 - name: Copy local apiserver certificate to kubernetes kubernetes_master
   copy:
     src: /Users/erik/Programming/terraform/kubernetes-exoscale/certs/apiserver.pem
     dest: /etc/kubernetes/ssl/apiserver.pem
-    mode: 0644
+    mode: 0600
+    owner: root
+    group: root
 - name: Copy local apiserver key certificates to kubernetes kubernetes_master
   copy:
     src: /Users/erik/Programming/terraform/kubernetes-exoscale/certs/apiserver-key.pem
     dest: /etc/kubernetes/ssl/apiserver-key.pem
-    mode: 0644
+    mode: 0600
+    owner: root
+    group: root

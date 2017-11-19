@@ -15,6 +15,7 @@ After successful setup your playbook, you just need to run following command to 
      ansible-playbook ./ansible-setup.yml -i ../inventory
      ansible-playbook ./etcd-provisioning.yml -i ../inventory
      ansible-playbook ./kubernetes-master-provisioning.yml -i ../inventory
+     ansible-playbook ./kubernetes-worker-provisioning.yml -i ../inventory
 
 ## Configure Cloudstack API
 
