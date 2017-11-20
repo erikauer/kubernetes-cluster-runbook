@@ -5,3 +5,4 @@ variables.tf
 inventory
 *.retry
 certs
+cloudstack.ini

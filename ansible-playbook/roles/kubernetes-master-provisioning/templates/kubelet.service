@@ -1,5 +1,6 @@
 [Service]
-ExecStart=/usr/bin/kubelet \
+Environment=KUBELET_IMAGE_TAG=v1.5.4_coreos.0
+ExecStart=/usr/lib/coreos/kubelet-wrapper \
   --api_servers=http://127.0.0.1:8080 \
   --register-node=false \
   --allow-privileged=true \
