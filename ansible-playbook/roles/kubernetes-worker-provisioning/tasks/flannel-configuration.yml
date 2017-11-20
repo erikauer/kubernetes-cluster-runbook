@@ -1,0 +1,12 @@
+- name: Create directory that contains flannel configuration
+  file: path=/etc/flannel state=directory mode=0755
+- name: Deploy flannel configuration
+  template: src=options.env dest=/etc/flannel/options.env
+- name: Create directory that contains flannel systemd drop-in
+  file: path=/etc/systemd/system/flanneld.service.d state=directory mode=0755
+- name: Deploy flannel systemd drop-in
+  template: src=40-ExecStartPre-symlink.conf dest=/etc/systemd/system/flanneld.service.d/40-ExecStartPre-symlink.conf
+- name: Create directory that contains flannel systemd drop-in for docker
+  file: path=/etc/systemd/system/docker.service.d state=directory mode=0755
+- name: Override docker systemd drop-in to configure flannel for docker
+  template: src=40-flannel.conf dest=/etc/systemd/system/docker.service.d/flannel.conf

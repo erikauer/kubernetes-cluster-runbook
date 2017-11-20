@@ -1,0 +1,4 @@
+- name: Create directory for pod manifests
+  file: path=/etc/kubernetes/manifests state=directory mode=0755
+- name: Deploy kube-proxy pod manifest
+  template: src=kube-proxy.yaml dest=/etc/kubernetes/manifests/kube-proxy.yaml
