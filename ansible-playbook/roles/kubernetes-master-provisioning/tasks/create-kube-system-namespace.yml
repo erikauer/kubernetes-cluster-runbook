@@ -1,0 +1,7 @@
+- name: Create kube-system Namespace
+  uri:
+    url: "http://127.0.0.1:8080/api/v1/namespaces"
+    method: POST
+    body: "{\"apiVersion\":\"v1\",\"kind\":\"Namespace\",\"metadata\":{\"name\":\"kube-system\"}}"
+    status: 201
+    run_once: true

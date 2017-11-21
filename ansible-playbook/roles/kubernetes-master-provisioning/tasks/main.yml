@@ -9,3 +9,4 @@
   - include_tasks: setup-kube-scheduler-pod.yml
   - include_tasks: systemd-reread.yml
   - include_tasks: start-kubelet.yml
+  - include_tasks: create-kube-system-namespace.yml
