@@ -3,3 +3,4 @@
     url: "http://{{ groups.etcd_nodes | first }}:2379/v2/keys/coreos.com/network/config"
     method: PUT
     body: "value={\"Network\":\"10.2.0.0/16\",\"Backend\":{\"Type\":\"vxlan\"}}"
+    status: 201
