@@ -1,7 +1,3 @@
-- service:
-    name: httpd
-    state: restarted
-
 - name: restart flanneld
   systemd:
     name: flanneld
