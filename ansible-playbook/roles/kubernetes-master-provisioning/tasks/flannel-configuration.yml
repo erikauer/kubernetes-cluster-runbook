@@ -9,4 +9,10 @@
 - name: Create directory that contains flannel systemd drop-in for docker
   file: path=/etc/systemd/system/docker.service.d state=directory mode=0755
 - name: Override docker systemd drop-in to configure flannel for docker
-  template: src=40-flannel.conf dest=/etc/systemd/system/docker.service.d/flannel.conf
+  template: src=40-flannel.conf dest=/etc/systemd/system/docker.service.d/40-flannel.conf
+- name: Create directory that contains docker cni files
+  file: path=/etc/kubernetes/cni/net.d state=directory mode=0755
+- name: Create docker cni option file
+  template: src=docker_opts_cni.env dest=/etc/kubernetes/cni/docker_opts_cni.env
+- name: Create flannel cni configuration file
+  template: src=10-flannel.conf dest=/etc/kubernetes/cni/net.d/10-flannel.conf

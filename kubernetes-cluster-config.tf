@@ -60,7 +60,7 @@ resource "cloudstack_instance" "kubernetes-etcd-node01" {
 resource "cloudstack_instance" "kubernetes-master-node01" {
   name                  = "kubernetes-master-node01"
   template              = "cc2b7707-3e72-47a6-b881-914eac9f8caf"
-  service_offering      = "Small"
+  service_offering      = "Extra-large"
   root_disk_size        = 50
   zone                  = "ch-gva-2"
   security_group_ids    = ["${cloudstack_security_group.kubernetes-cluster-security-group.id}"]
@@ -71,7 +71,7 @@ resource "cloudstack_instance" "kubernetes-master-node01" {
 resource "cloudstack_instance" "kubernetes-worker-node01" {
   name                  = "kubernetes-worker-node01"
   template              = "cc2b7707-3e72-47a6-b881-914eac9f8caf"
-  service_offering      = "Small"
+  service_offering      = "Large"
   root_disk_size        = 50
   zone                  = "ch-gva-2"
   security_group_ids    = ["${cloudstack_security_group.kubernetes-cluster-security-group.id}"]
@@ -80,7 +80,7 @@ resource "cloudstack_instance" "kubernetes-worker-node01" {
 resource "cloudstack_instance" "kubernetes-worker-node02" {
   name                  = "kubernetes-worker-node02"
   template              = "cc2b7707-3e72-47a6-b881-914eac9f8caf"
-  service_offering      = "Small"
+  service_offering      = "Large"
   root_disk_size        = 50
   zone                  = "ch-gva-2"
   security_group_ids    = ["${cloudstack_security_group.kubernetes-cluster-security-group.id}"]
@@ -89,13 +89,12 @@ resource "cloudstack_instance" "kubernetes-worker-node02" {
 resource "cloudstack_instance" "kubernetes-worker-node03" {
   name                  = "kubernetes-worker-node03"
   template              = "cc2b7707-3e72-47a6-b881-914eac9f8caf"
-  service_offering      = "Small"
+  service_offering      = "Large"
   root_disk_size        = 50
   zone                  = "ch-gva-2"
   security_group_ids    = ["${cloudstack_security_group.kubernetes-cluster-security-group.id}"]
   keypair               = "${cloudstack_ssh_keypair.kubernetes-cluster-ssh-key.id}"
 }
-
 
 # Template for ansible inventory
 data "template_file" "ansible-inventory" {

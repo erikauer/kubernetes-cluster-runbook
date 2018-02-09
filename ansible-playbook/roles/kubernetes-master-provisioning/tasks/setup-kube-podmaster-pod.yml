@@ -1,2 +1,0 @@
-- name: Deploy podmaster pod manifest
-  template: src=kube-podmaster.yaml dest=/etc/kubernetes/manifests/kube-podmaster.yaml

@@ -1,14 +1,14 @@
 [Service]
 Environment=KUBELET_IMAGE_TAG=v1.5.4_coreos.0
 ExecStart=/usr/lib/coreos/kubelet-wrapper \
-  --api_servers=https://{{ groups.kubernetes_master | first }} \
+  --api-servers=https://{{ groups.kubernetes_master | first }} \
   --register-node=true \
   --allow-privileged=true \
   --config=/etc/kubernetes/manifests \
   --hostname-override={{inventory_hostname}} \
-  --cluster_dns=10.3.0.10 \
-  --cluster_domain=cluster.local \
-  --kubeconfig=/etc/kubernetes/worker-kubeconfig.yaml \
+  --cluster-dns=10.3.0.10 \
+  --cluster-domain=cluster.local \
+  --kubeconfig=/etc/kubernetes/manifests/worker-kubeconfig.yaml \
   --tls-cert-file=/etc/kubernetes/ssl/worker.pem \
   --tls-private-key-file=/etc/kubernetes/ssl/worker-key.pem \
   --cadvisor-port=0
