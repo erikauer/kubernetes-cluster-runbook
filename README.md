@@ -1,35 +1,37 @@
 # Kubernetes Cluster Installation
 
 Using terraform and ansible this example installs a kubernetes cluster following
-this description: https://coreos.com/kubernetes/docs/latest/getting-started.html
+this description: https://coreos.com/kubernetes/docs/1.6.1/getting-started.html
 
 ## Prerequisites
 
-* Terrafrom version 10.7 installed
-* configured cloudstack terrafrom provider
+* Terraform version 10.8+ installed
+* configured cloudstack terraform provider
 
 ## Run example
 
      terraform init
-     terraform apply
+     terraform plan -var-file='./exoscale.tfvars' -out=next-steps.plan
+     terraform apply -parallelism=10 next-steps.plan
 
-##  Cloudstack Provider Configuration
+## Cloudstack Provider Configuration
 
-To configure the cloudstack provider just create a file variables.tf inside the
+To configure the cloudstack provider just create a file exoscale.tfvars inside the
 root directory of this example, which contains information about the API. Eg.
 
+      cloudstack_api_url = "https://api.exoscale.ch/compute"
+      cloudstack_api_key = "EXO02a0186f1234ab2a606700a9"
+      cloudstack_secret_key = "6uRPl00k9EddcljHJlywFJEFFOUzJnV9GXICXyicgvY"
 
-      variable "cloudstack_api_url" {
-          type = "string"
-          default =  "https://api.exoscale.ch/compute"
-      }
+## Contribute
 
-      variable "cloudstack_api_key" {
-          type = "string"
-          default = "EXO02a0186f1234ab2a606700a9"
-      }
+Before contribution run
 
-      variable "cloudstack_secret_key" {
-          type = "string"
-          default =  "6uRPl00k9EddcljHJlywFJEFFOUzJnV9GXICXyicgvY"
-      }
+      terraform fmt
+      terraform validate -var-file='./exoscale.tfvars'
+
+to run
+
+## Clean up
+
+terraform destroy -parallelism=10 -var-file='./exoscale.tfvars'
