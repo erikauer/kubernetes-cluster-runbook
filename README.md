@@ -11,6 +11,7 @@ this description: https://coreos.com/kubernetes/docs/1.6.1/getting-started.html
 ## Run example
 
      terraform init
+     terraform get
      terraform plan -var-file='./exoscale.tfvars' -out=next-steps.plan
      terraform apply -parallelism=10 next-steps.plan
 
